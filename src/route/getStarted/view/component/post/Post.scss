@@ -1,0 +1,173 @@
+@import '~assets/style/variables';
+@import '~assets/style/mixins';
+
+.post-item {
+  padding: 8px;
+  width: calc(100% / 4);
+  @include small-pad() {
+    width: calc(100% / 2);
+  }
+
+  &:not(.user) {
+    .provider {
+      display: none;
+    }
+  }
+}
+
+.post {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+
+  .cover {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: calc(160 / 112 * 100%);
+    }
+
+    .cover-blocker {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      @include fz(14);
+      color: $color-white;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-black;
+      z-index: -1;
+    }
+
+    > img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+
+      &:after {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        @include fz(14);
+        content: attr(data-missing);
+        color: $color-white;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-black;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      z-index: 1;
+    }
+
+    svg[name='unselect'] {
+      .cls-2 {
+        fill: $color-white;
+      }
+    }
+
+    svg[name='select'] {
+      .cls-2 {
+        fill: $color-white;
+      }
+      .cls-3 {
+        fill: $color-primary-1;
+      }
+    }
+
+    &.self {
+      > img {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .uploaded {
+    position: absolute;
+    bottom: calc(128 / 432 * 100%);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: $color-white;
+    text-align: center;
+    width: calc(100% - 16px);
+  }
+
+  .provider {
+    padding: 8px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    .headshot {
+      flex: 0 0 auto;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      svg {
+        &[name='no-photo'] {
+          .cls-1 {
+            fill: $color-g-300;
+          }
+        }
+      }
+    }
+
+    .info {
+      flex: 1 1 auto;
+      padding-left: 8px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: bold;
+      overflow: hidden;
+
+      > div {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .sub {
+        font {
+          font-weight: normal;
+          color: $color-g-500;
+        }
+      }
+    }
+  }
+}

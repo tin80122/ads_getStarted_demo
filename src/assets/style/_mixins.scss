@@ -1,0 +1,87 @@
+// Typeface
+@mixin fz($size) {
+  font-size: #{$size}px;
+  @if $size == 44 {
+    line-height: 48px;
+  } @else if $size == 40 {
+    line-height: 48px;
+  } @else if $size == 36 {
+    line-height: 44px;
+  } @else if $size == 32 {
+    line-height: 40px;
+  } @else if $size == 28 {
+    line-height: 36px;
+  } @else if $size == 24 {
+    line-height: 32px;
+  } @else if $size == 20 {
+    line-height: 28px;
+  } @else if $size == 18 {
+    line-height: 24px;
+  } @else if $size == 16 {
+    line-height: 20px;
+  } @else if $size == 14 {
+    line-height: 18px;
+  } @else if $size == 12 {
+    line-height: 16px;
+  } @else {
+    @error 'Unknown Typeface #{$size}.';
+  }
+}
+
+@mixin fz-in-btn($size) {
+  font-size: #{$size}px;
+  line-height: inherit;
+}
+
+// ========= mixins for RWD
+// 把變數帶入 mixin 中，此 mixin 只就單純把 media queries 寫進 mixin 中，
+// 並且使用已設立的變數來調動 media queries 的 width
+// =========
+
+//電腦 (寬螢幕)
+@mixin wide-pc() {
+  @media all and (min-width: $wide-pc-media) {
+    @content;
+  }
+}
+
+//電腦
+@mixin pc() {
+  @media all and (max-width: $wide-pc-media - 1) {
+    @content;
+  }
+}
+
+//平板
+@mixin pad() {
+  @media all and (max-width: $pc-media - 1) {
+    @content;
+  }
+}
+
+//小平板
+@mixin small-pad() {
+  @media all and (max-width: $pad-media - 1) {
+    @content;
+  }
+}
+
+//手機
+@mixin phone() {
+  @media all and (max-width: $phone-media - 1) {
+    @content;
+  }
+}
+
+@mixin mask-box-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100vw - 48px);
+  max-height: calc(100vh - 80px);
+  max-width: 324px;
+  background: $mask-box;
+  padding: $mask-box-padding;
+  border-radius: $mask-box-radius;
+}

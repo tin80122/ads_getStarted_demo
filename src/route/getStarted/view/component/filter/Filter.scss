@@ -1,0 +1,13 @@
+.filter {
+  padding: 12px 0;
+
+  .fake-select {
+    max-width: 328px;
+    margin: 0 auto;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

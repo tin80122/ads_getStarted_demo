@@ -1,0 +1,118 @@
+@import '~assets/style/variables';
+@import '~assets/style/mixins';
+@import '~component/button/Button';
+
+.textBaseAds {
+  padding: 8px;
+  width: calc(100% / 4);
+  @include small-pad() {
+    width: calc(100% / 2);
+  }
+
+  .container {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+
+    .cover {
+      position: relative;
+      z-index: 0;
+
+      &::before {
+        content: '';
+        display: block;
+        padding-top: calc(160 / 112 * 100%);
+      }
+
+      .title {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        width: 100%;
+        padding: 16px 8px;
+        text-align: center;
+        color: $color-white;
+        @include fz(12);
+        font-weight: normal;
+        z-index: 2;
+      }
+
+      .gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &:before,
+        &:after {
+          position: absolute;
+          content: '';
+          display: flex;
+          width: 100%;
+          height: 40px;
+          left: 0;
+          z-index: 1;
+        }
+
+        &:before {
+          top: 0;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.3) 98%
+          );
+        }
+
+        &:after {
+          bottom: 0;
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.3) 98%
+          );
+        }
+      }
+
+      > img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+      }
+
+      svg {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: block;
+        width: 24px;
+        height: 24px;
+        z-index: 2;
+
+        &[name='unselect'] {
+          .cls-2 {
+            fill: $color-white;
+          }
+        }
+
+        &[name='select'] {
+          .cls-2 {
+            fill: $color-white;
+          }
+          .cls-3 {
+            fill: $color-primary-1;
+          }
+        }
+      }
+    }
+  }
+}

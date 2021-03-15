@@ -1,0 +1,70 @@
+@import '~assets/style/variables';
+@import '~assets/style/extends';
+@import '~assets/style/mixins';
+
+.get-started {
+  position: relative;
+  max-width: 640px;
+  margin: auto;
+
+  .select-video-caption {
+    font-weight: 500;
+    padding-bottom: 2px;
+    color: $text-title;
+    padding-top: 22px;
+  }
+
+  .select-video-description {
+    color: $color-test-1;
+    padding-bottom: 8px;
+  }
+
+  .tab {
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+
+  .self-hr {
+    @extend %hr;
+    border-top-width: 2px;
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  .wrapper {
+    position: relative;
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+
+    .top-trigger {
+      display: block;
+      position: absolute;
+      top: calc((#{$fixed-top} - 13px) * -1);
+
+      @include small-pad() {
+        top: calc((#{$fixed-top-mobile} - 13px) * -1);
+      }
+    }
+
+    .loading {
+      margin-top: 16px;
+    }
+
+    .fetch-end {
+      padding: 24px 16px;
+    }
+  }
+
+  .post-list {
+    position: relative;
+    padding: 8px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    &.empty {
+      padding: 0px;
+    }
+  }
+}

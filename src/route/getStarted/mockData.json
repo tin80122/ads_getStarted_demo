@@ -1,0 +1,77 @@
+{
+  "config": {
+    "about": "FB:  Shero on the way↵IG: sheroontheway ↵#旅遊#歷史↵#travel  #history",
+    "advertising_id": "VYYSGV",
+    "applying_details": null,
+    "applying_payment_method": 0,
+    "available_campaigns": 0,
+    "billing_error": 0,
+    "campaign_draft": "",
+    "claim_draft": "",
+    "claimed_places": 0,
+    "currency": "USD",
+    "email": "tin80122122@gmail.com",
+    "id": "!8qm_i9rmnV",
+    "indicators": 0,
+    "isShowGoToClaimNewLocation": true,
+    "is_email_verified": false,
+    "name": "Sasa",
+    "payment_error": 0,
+    "payment_method": 0,
+    "payment_method_details": null,
+    "profile_image_url": "https://g-usr.placeyapp.com/headshot/!8qm_i9rmnV.jpg?dd357fad298aed2d234467f5832716a9",
+    "promo_code": 0,
+    "promo_details": null,
+    "promo_error": 0,
+    "suspension": 0,
+    "timezone": "",
+    "uid": "sasatsai0122",
+    "user_id": "!8qm_i9rmnV",
+    "user_level": 2,
+    "without_claimed_places": false
+  },
+  "context": {
+    "adContent": {},
+    "claimedList": [],
+    "draft": {
+      "id": "",
+      "name": "0314 - 品牌知名度",
+      "type": 2,
+      "message": "",
+      "asset": {
+        "cover_url": "",
+        "created_at": "",
+        "description": "",
+        "id": "",
+        "owner": {},
+        "place": { "id": "", "name": "", "address": "", "coordinates": [] },
+        "provided_by": 1,
+        "video_url": ""
+      }
+    },
+    "getStarted": {
+      "selectVideo": {
+        "tab": "",
+        "filter": ""
+      }
+    },
+    "localVideo": {
+      "description": "",
+      "file": "",
+      "id": "",
+      "index": 0,
+      "isHVCVideo": false,
+      "snapshots": []
+    },
+    "profile": {
+      "public_country_code": "",
+      "public_phone": "",
+      "public_email": "",
+      "redirect_page": ""
+    },
+    "review": {},
+    "uploadedVideoStatus": null,
+    "utils": { "timezone": "Asia/Taipei" },
+    "video": { "token": "", "id": "", "progress": 0 }
+  }
+}
